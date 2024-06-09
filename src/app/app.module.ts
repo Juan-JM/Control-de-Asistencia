@@ -13,6 +13,7 @@ import { LayoutSidenavNavComponent } from './shared/layout-sidenav-nav/layout-si
 import { LayoutSidenavContentComponent } from './shared/layout-sidenav-content/layout-sidenav-content.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UsuarioComponent } from './pages/usuario/usuario.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UsuarioComponent } from './pages/usuario/usuario.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration()

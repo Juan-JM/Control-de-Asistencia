@@ -44,8 +44,6 @@
               "./node_modules/bootstrap/dist/js/bootstrap.bundle.js",
 
               "src/assets/js/scripts.js",
-              "src/assets/js/chart-area-demo.js",
-              "src/assets/js/chart-bar-demo.js",
               "src/assets/js/datatables-simple-demo.js"
             ],
             "server": "src/main.server.ts",
