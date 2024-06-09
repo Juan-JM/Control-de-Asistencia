@@ -1,0 +1,35 @@
+<app-header></app-header>
+<div id="layoutSidenav">
+    <app-layout-sidenav-nav></app-layout-sidenav-nav>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">Editar Gestion</h1>
+
+
+
+                <form (ngSubmit)="onSubmit()" #gestionForm="ngForm">
+                    {{updateGestion.id}}
+                    <div data-mdb-input-init class="form-outline mb-1">
+                        <label class="form-label" for="form3Example3">Año</label>
+                        <input type="number" id="anio" [(ngModel)]="updateGestion.anio" class="form-control form-control-lg" name="anio" required="" />
+                    </div>
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <label class="form-label" for="form3Example3">Fecha Inicio:</label>
+                        <input type="date" id="anio" [(ngModel)]="updateGestion.fechaIni" class="form-control form-control-lg" name="fechaIni" required="" />
+                    </div>
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <label class="form-label" for="form3Example3">Fecha Inicio:</label>
+                        <input type="date" id="fechaFin" [(ngModel)]="updateGestion.fechaFin" class="form-control form-control-lg" name="fechaFin" required="" />
+                    </div>
+
+                    <button class="btn btn-primary px-4" type="submit" [disabled]="!gestionForm.form.valid">Agregar Gestión</button>
+                    <button class="btn btn-danger" type="submit" (click)="cancelar()">cancelar</button>
+                </form>
+
+            </div>
+        </main>
+    </div>
+
+</div>
