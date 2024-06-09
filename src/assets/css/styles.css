@@ -100,8 +100,9 @@ body {
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
   background-color: var(--bs-body-bg);
-  -webkit-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; /* Para compatibilidad con navegadores WebKit */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-size-adjust: 100%; /* Para compatibilidad con otros navegadores */
 }
 
 hr {
@@ -4384,7 +4385,7 @@ textarea.form-control-lg {
   background-color: var(--bs-accordion-btn-bg);
   border: 0;
   border-radius: 0;
-  overflow-anchor: none;
+  /* overflow-anchor: none; */
   transition: var(--bs-accordion-transition);
 }
 @media (prefers-reduced-motion: reduce) {
