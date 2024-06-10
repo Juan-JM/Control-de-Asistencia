@@ -30,9 +30,9 @@ export class ApiService{
         console.log(updateUrl);
         return this.http.put<Gestion>(updateUrl,data);
     }
+
     deleteGestion(data:Gestion):Observable<Gestion>{
         const updateUrl = `${this.url}/${data.id}`; 
         return this.http.delete<Gestion>(updateUrl);
-
     }
 }

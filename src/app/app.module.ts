@@ -20,6 +20,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CreateComponent } from './CRUD/Gestion/create/create.component';
 import { UpdateGestionComponent } from './CRUD/Gestion/update-gestion/update-gestion.component';
 import { DeleteGestionComponent } from './CRUD/Gestion/delete-gestion/delete-gestion.component';
+import { GestionPeriodoComponent } from './pages/gestion-periodo/gestion-periodo.component';
+import { CreateGestionPeriodoComponent } from './CRUD/GestionPeriodo/create-gestion-periodo/create-gestion-periodo.component';
+import { UpdateGestionPeriodoComponent } from './CRUD/GestionPeriodo/update-gestion-periodo/update-gestion-periodo.component';
+import { DeleteGestionPeriodoComponent } from './CRUD/GestionPeriodo/delete-gestion-periodo/delete-gestion-periodo.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,10 @@ import { DeleteGestionComponent } from './CRUD/Gestion/delete-gestion/delete-ges
     CreateComponent,
     UpdateGestionComponent,
     DeleteGestionComponent,
+    GestionPeriodoComponent,
+    CreateGestionPeriodoComponent,
+    UpdateGestionPeriodoComponent,
+    DeleteGestionPeriodoComponent,
   ],
   imports: [
     BrowserModule,

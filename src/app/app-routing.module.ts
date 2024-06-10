@@ -7,6 +7,10 @@ import { GestionComponent } from './pages/gestion/gestion.component';
 import { CreateComponent } from './CRUD/Gestion/create/create.component';
 import { UpdateGestionComponent } from './CRUD/Gestion/update-gestion/update-gestion.component';
 import { DeleteGestionComponent } from './CRUD/Gestion/delete-gestion/delete-gestion.component';
+import { GestionPeriodoComponent } from './pages/gestion-periodo/gestion-periodo.component';
+import { CreateGestionPeriodoComponent } from './CRUD/GestionPeriodo/create-gestion-periodo/create-gestion-periodo.component';
+import { UpdateGestionPeriodoComponent } from './CRUD/GestionPeriodo/update-gestion-periodo/update-gestion-periodo.component';
+import { DeleteGestionPeriodoComponent } from './CRUD/GestionPeriodo/delete-gestion-periodo/delete-gestion-periodo.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/login',pathMatch:'full'},
@@ -18,6 +22,12 @@ const routes: Routes = [
   {path: 'gestion-crear', component:CreateComponent},
   {path: 'gestion-editar', component:UpdateGestionComponent},
   {path: 'gestion-eliminar', component:DeleteGestionComponent},
+  // gestion-periodo
+  {path: 'gestion-periodo', component:GestionPeriodoComponent},
+  {path: 'gestion-periodo-create', component:CreateGestionPeriodoComponent},
+  {path: 'gestion-periodo-update', component:UpdateGestionPeriodoComponent},
+  {path: 'gestion-periodo-delete', component:DeleteGestionPeriodoComponent},
+
 
 
 

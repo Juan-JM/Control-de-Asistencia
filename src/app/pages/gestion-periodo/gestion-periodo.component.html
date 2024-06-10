@@ -1,0 +1,62 @@
+<app-header></app-header>
+<div id="layoutSidenav">
+    <app-layout-sidenav-nav></app-layout-sidenav-nav>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">Gestion Periodo</h1>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item active">gestion periodo</li>
+                </ol>
+
+                <button class="btn btn-primary" type="submit" (click)="crearVista()">Crear gestion periodo</button>
+
+                <div *ngIf="data.length === 0">Cargando datos...</div>
+
+
+
+                <div *ngIf="data.length > 0" class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Año</th>
+                                <th>Tipo</th>
+                                <th>Inicio de clases</th>
+                                <th>Fin de clases</th>
+                                <th>evaluacion1</th>
+                                <th>evaluacion2</th>
+                                <th>evaluacion3</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of data">
+                                <td>{{item.gestion.anio}}</td>
+                                <td>{{item.periodo.nombre}}</td>
+                                <td>{{item.inicio_clase}}</td>
+                                <td>{{item.fin_clase}}</td>
+                                <td>{{item.evaluacion1 || 'no definido'}}</td>
+                                <td>{{item.evaluacion2 || 'no definido'}}</td>
+                                <td>{{item.evaluacion3 || 'no definido'}}</td>
+
+                                <td>
+
+                                    <button type="submit" (click)="editarVista(item)">Editar</button>
+                                    <button type="submit" (click)="eliminarVista(item)">Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+
+
+
+
+
+        </main>
+    </div>
+
+</div>
