@@ -1,0 +1,49 @@
+<nav class="sb-topnav navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!-- Navbar Brand-->
+    <div id="navbarTextContainer">
+      <a class="navbar-brand ps-3" id="navbarText">Navegacion</a>
+    </div>
+    <button class="btn btn-link btn-sm order-1 order-lg-0 ms-2" id="sidebarToggle" href="#!">
+      <i class="fas fa-bars" title="Abrir barra lateral"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar Search-->
+      <form class="d-flex ms-auto me-3">
+        <div class="input-group">
+          <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..."
+            aria-describedby="btnNavbarSearch" />
+          <button class="btn btn-primary" id="btnNavbarSearch" type="button" title="Search">
+            <i class="fas fa-search"></i>
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Navbar User Menu-->
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <i class="fas fa-user fa-fw"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#">Configuración</a></li>
+          <li><a class="dropdown-item" href="#">Actividad</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+<script>
+  document.getElementById('sidebarToggle').addEventListener('click', function () {
+    var navbarTextContainer = document.getElementById('navbarTextContainer');
+    navbarTextContainer.classList.toggle('hidden'); // Agrega o quita la clase 'hidden'
+  });
+</script>

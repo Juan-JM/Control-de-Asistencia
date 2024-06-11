@@ -1,0 +1,59 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Custom CSS */
+.d-flex.ms-auto.me-3 {
+  margin-right: 1rem;
+}
+
+.navbar-nav .nav-item.dropdown {
+  margin-left: 1rem;
+}
+
+.input-group {
+  max-width: 250px;
+}
+
+.hidden-text {
+  display: none;
+}
+
+.hidden {
+  display: none;
+  /* Oculta el elemento */
+}
+
+#sidebarToggle.collapsed {
+  margin-left: -100px;
+  /* Adjust this value as needed */
+}
+
+.button-hidden {
+  display: none !important;
+}
+
+.navbar-brand-expanded {
+  padding-left: 0 !important;
+}
+
+.button-expanded {
+  margin-left: auto !important;
+}
+
+.navbar-brand-adjusted {
+  padding-left: 0 !important;
+}
+
+#navbarText {
+  padding: 0 40px;
+  /* Agrega un espacio de 10px a la izquierda y a la derecha del texto */
+  width: fit-content;
+}

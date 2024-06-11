@@ -1,0 +1,17 @@
+<app-layout>
+  <main>
+    <div class="container-fluid px-4">
+      <h1 class="mt-4">Editar Gestion</h1>
+
+      <form (ngSubmit)="onSubmit()" #gestionForm="ngForm">
+        {{updateGestion.id}}
+
+        <p>Seguro que quiere eliminar la > <strong> Gestion {{updateGestion.anio}}</strong>?</p>
+        <button class="btn btn-primary px-4" type="submit" [disabled]="!gestionForm.form.valid">Eliminar
+          gestión</button>
+        <button class="btn btn-danger" type="button" (click)="cancelar()">cancelar</button>
+      </form>
+
+    </div>
+  </main>
+</app-layout>

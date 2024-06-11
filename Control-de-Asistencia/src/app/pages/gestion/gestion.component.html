@@ -1,0 +1,65 @@
+<app-layout>
+  <main>
+    <div class="container-fluid px-4">
+      <div class="d-flex justify-content-between align-items-center mt-4 mb-2">
+        <h1>Gestion</h1>
+        <button class="btn btn-success" type="button" (click)="crearVista()">Crear Nuevo</button>
+      </div>
+      <!-- <div *ngIf="estadoVista === 'crear'">
+                    crear
+                    <form (ngSubmit)="onSubmit()" #gestionForm="ngForm">
+
+                        <div data-mdb-input-init class="form-outline mb-1">
+                            <label class="form-label" for="form3Example3">Año</label>
+                            <input type="number" id="anio" [(ngModel)]="newGestion.anio" class="form-control form-control-lg" name="anio" required="" />
+                        </div>
+                        <div data-mdb-input-init class="form-outline mb-4">
+                            <label class="form-label" for="form3Example3">Fecha Inicio:</label>
+                            <input type="date" id="anio" [(ngModel)]="newGestion.fechaIni" class="form-control form-control-lg" name="fechaIni" required="" />
+                        </div>
+                        <div data-mdb-input-init class="form-outline mb-4">
+                            <label class="form-label" for="form3Example3">Fecha Inicio:</label>
+                            <input type="date" id="fechaFin" [(ngModel)]="newGestion.fechaFin" class="form-control form-control-lg" name="fechaFin" required="" />
+                        </div>
+
+
+                    </form>
+                    <button class="btn btn-primary" type="submit" (click)="cancelar()">cancelar</button>
+                </div> -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <i class="fas fa-table me-1"></i>
+          Datos
+        </div>
+        <!-- <div *ngIf="data.length === 0">Cargando datos...gaaa</div> -->
+        <div *ngIf="data.length >=0" class="card-body">
+          <table id="datatablesSimple">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Año</th>
+                <th>Fecha inicio</th>
+                <th>Fecha Final</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of data">
+                <td>{{item.id}}</td>
+                <td>{{item.anio}}</td>
+                <td>{{formatFecha(item.fechaIni)}}</td>
+                <td>{{formatFecha(item.fechaFin)}}</td>
+                <td>
+                  <button class="btn btn-primary" type="button" (click)="editarVista(item)">Editar</button>
+                  <button class="btn btn-danger" type="button" (click)="eliminarVista(item)">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</app-layout>

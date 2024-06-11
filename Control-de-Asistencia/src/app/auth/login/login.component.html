@@ -1,0 +1,65 @@
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+          alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+            <p class="text-center fw-bold display-5 mb-0">Iniciar Sesión</p>
+          </div>
+
+          <div class="divider d-flex align-items-center my-4"></div>
+
+          <!-- Email input -->
+          <div data-mdb-input-init class="form-outline mb-4">
+            <label class="form-label" for="form3Example3">Email</label>
+            <input formControlName="email" type="email" id="email" class="form-control form-control-lg"
+              placeholder="example@gmail.com" (keyup.enter)="focusPassword(passwordInput)" />
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+              <div *ngIf="email.hasError('required')">
+                El Email es requerido.
+              </div>
+              <div *ngIf="email.hasError('email')">
+                El Email debe tener un formato valido
+              </div>
+            </div>
+          </div>
+
+          <!-- Password input -->
+          <div data-mdb-input-init class="form-outline mb-3">
+            <label class="form-label" for="form3Example4">Contraseña</label>
+            <input formControlName="password" type="password" id="password" class="form-control form-control-lg"
+              placeholder="password" (keyup.enter)="login()" #passwordInput />
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+              <div *ngIf="password.hasError('required')">
+                El password es requerido.
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <!-- Checkbox -->
+            <div class="form-check mb-0">
+              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+              <label class="form-check-label" for="form2Example3">
+                Recuérdame
+              </label>
+            </div>
+          </div>
+          <p class="text-danger">{{loginError}}</p>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">
+              Ingresar
+            </button>
+          </div>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+</section>
