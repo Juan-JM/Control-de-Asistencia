@@ -1,0 +1,30 @@
+<app-layout>
+  <main>
+    <div class="container-fluid px-4">
+      <h1 class="mt-4">Crear Carrera</h1>
+
+      <form (ngSubmit)="onSubmit()" #carreraForm="ngForm">
+
+        <div data-mdb-input-init class="form-outline mb-1">
+          <label class="form-label" for="form3Example3">Nombre</label>
+          <input type="text" id="nombre" [(ngModel)]="newCarrera.nombre" class="form-control form-control-lg"
+            name="nombre" required="" />
+        </div>
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form3Example3">Sigla</label>
+          <input type="text" id="sigla" [(ngModel)]="newCarrera.sigla" class="form-control form-control-lg" name="sigla"
+            required="" />
+        </div>
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form3Example3">Sistema Academico</label>
+          <input type="text" id="sistema_academico" [(ngModel)]="newCarrera.sistema_academico"
+            class="form-control form-control-lg" name="sistema_academico" required="" />
+        </div>
+        <button class="btn btn-primary px-4" type="submit" [disabled]="!carreraForm.form.valid">Agregar
+          Carrera</button>
+        <button class="btn btn-danger" type="button" (click)="cancelar()">cancelar</button>
+
+      </form>
+    </div>
+  </main>
+</app-layout>

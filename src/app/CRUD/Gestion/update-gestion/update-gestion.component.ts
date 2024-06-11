@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../../../services/gestion/gestion.service';
 import { Router } from '@angular/router';
-import { response } from 'express';
-import { error } from 'console';
+
 interface Gestion {
   id?: number;
   anio: number;
@@ -14,6 +13,7 @@ interface Gestion {
   templateUrl: './update-gestion.component.html',
   styleUrl: './update-gestion.component.css'
 })
+
 export class UpdateGestionComponent {
   public updateGestion: Gestion;
 

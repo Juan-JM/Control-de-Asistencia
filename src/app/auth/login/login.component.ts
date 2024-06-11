@@ -4,17 +4,17 @@ import { error, log } from 'console';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/auth/login.service';
 import { LoginRequest } from '../../services/auth/loginRequest';
-import  { response } from 'express';
+import { response } from 'express';
 
-interface UsuarioInt{
-  usuario:string,
-  password:string
+interface UsuarioInt {
+  usuario: string,
+  password: string
 }
-interface authenticado{
+interface authenticado {
   status: boolean,
   token: string,
-  username:string,
-  userId:number
+  username: string,
+  userId: number
 }
 
 @Component({
@@ -23,18 +23,18 @@ interface authenticado{
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-loginError:string="";
-usuarioNuevo: UsuarioInt={
-  usuario:'',
-  password:''
-}
-bien:authenticado={
-  status: false,
-  token: '',
-  username:'',
-  userId:0
-}
-credencialFallida:boolean=false;
+  loginError: string = "";
+  usuarioNuevo: UsuarioInt = {
+    usuario: '',
+    password: ''
+  }
+  bien: authenticado = {
+    status: false,
+    token: '',
+    username: '',
+    userId: 0
+  }
+  credencialFallida: boolean = false;
 
 
 
@@ -50,7 +50,11 @@ credencialFallida:boolean=false;
     private formBuilder: FormBuilder,
     private router: Router,
     private LoginService: LoginService
+<<<<<<< Updated upstream
   ) {}
+=======
+  ) { }
+>>>>>>> Stashed changes
 
   get usuario() {
     return this.loginForm.controls.usuario;
@@ -73,22 +77,23 @@ credencialFallida:boolean=false;
           console.log(userData);
           window.location.href = '/inicio';
         },
-        error: (errorData) => {
-          console.error(errorData);
-          this.loginError = errorData;
-        },
+          error: (errorData) => {
+        console.error(errorData);
+        this.loginError = errorData;
+      },
         complete: () => {
           console.info("Login completo");
           this.loginForm.reset();
         }
       });
-    } else {
-      alert("Error al ingresar los datos");
-    }
+  } else {
+  alert("Error al ingresar los datos");
+}
   }
 
-  loginToken(){
+loginToken(){
 
+<<<<<<< Updated upstream
     if(this.loginForm.value.usuario && this.loginForm.value.password){
       this.usuarioNuevo.usuario = this.loginForm.value.usuario;
       this.usuarioNuevo.password = this.loginForm.value.password;
@@ -107,12 +112,36 @@ credencialFallida:boolean=false;
       },
       (error)=>{
         console.log(error);
-      }
-    );
-
-
-
+=======
+  if (this.loginForm.value.usuario && this.loginForm.value.password) {
+    this.usuarioNuevo.usuario = this.loginForm.value.usuario;
+    this.usuarioNuevo.password = this.loginForm.value.password;
   }
+
+  this.LoginService.loginApi(this.usuarioNuevo).subscribe(
+    (response) => {
+      console.log(response);
+      if (response.token == null) {
+        this.credencialFallida = true;
+      } else {
+        this.credencialFallida = false;
+        this.LoginService.setAuthenticated();
+        // window.location.href = '/gestion';
+>>>>>>> Stashed changes
+      }
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
+
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
+
+
+}
 
   // onSubmit(): void {
   //   this.apiService.addGestion(this.newGestion).subscribe(

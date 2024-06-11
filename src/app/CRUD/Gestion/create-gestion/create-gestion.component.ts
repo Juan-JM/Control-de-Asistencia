@@ -11,10 +11,10 @@ interface Gestion {
 
 @Component({
   selector: 'app-create',
-  templateUrl: './create.component.html',
-  styleUrl: './create.component.css',
+  templateUrl: './create-gestion.component.html',
+  styleUrl: './create-gestion.component.css',
 })
-export class CreateComponent {
+export class CreateGestionComponent {
   newGestion: Gestion = {
     anio: new Date().getFullYear(),
     fechaFin: '',
