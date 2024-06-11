@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div id="layoutSidenav">
+    <app-layout-sidenav-nav></app-layout-sidenav-nav>
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">Actualizar</h1>
+                <form (ngSubmit)="onSubmit()" #gestionForm="ngForm">
+
+                    <!-- <div data-mdb-input-init class="form-outline mb-1">
+                        <label class="form-label" for="form3Example3">Seleccionar gestion</label>
+                        <div *ngIf="ListaGestion.length === 0">Cargando lista</div>
+
+                        <div *ngIf="ListaGestion.length > 0">
+                            <select name="gestion" [(ngModel)]="foreing.gestion.id" class="form-control" required aria-placeholder="Seleccionar">
+                                    <option value="" disabled>Seleccionar</option>
+                                    <option *ngFor="let item of ListaGestion" [value]="item.id">{{ item.anio }}</option>
+                                  </select>
+                        </div>
+
+
+                    </div>
+
+                    <div>
+                        <label for="form3Example3">Inicio de Clases</label>
+                        <input type="date" id="inicio-clase" [(ngModel)]="updateData.inicio_clase" class="" [value]="foreing.inicio_clase" name="inicio-clase" required="" />
+                    </div>
+                    <div>
+                        <label for="form3Example3">Fin de Clases</label>
+                        <input type="date" id="fin" [(ngModel)]="updateData.fin_clase" class="" name="fin" required="" />
+                    </div>
+                    <div>
+                        <label for="form3Example3">Evaluacion 1</label>
+                        <input type="date" id="eva1" [(ngModel)]="updateData.evaluacion1" class="" name="eva1" />
+                    </div>
+                    <div>
+                        <label for="form3Example3">Evaluacion 2</label>
+                        <input type="date" id="eva2" [(ngModel)]="updateData.evaluacion2" class="" name="eva2" />
+                    </div>
+                    <div>
+                        <label for="form3Example3">Evaluacion 3</label>
+                        <input type="date" id="eva3" [(ngModel)]="updateData.evaluacion3" class="" name="eva3" />
+                    </div> -->
+
+                    <button class="btn btn-primary px-4" type="submit" [disabled]="!gestionForm.form.valid">Agregar Gestión</button>
+
+                </form>
+                <button class="btn btn-danger" type="submit" (click)="cancelar()">cancelar</button>
+
+            </div>
+
+
+        </main>
+    </div>
+
+</div>

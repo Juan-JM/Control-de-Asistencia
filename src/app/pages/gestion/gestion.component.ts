@@ -12,6 +12,7 @@ import {
 import { error } from "console";
 import { Router,NavigationExtras   } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { LoginService } from "../../services/auth/login.service";
 
 interface Gestion {
     id?: number;
@@ -23,7 +24,8 @@ interface Gestion {
 @Component({
     selector: 'app-gesion',
   templateUrl: './gestion.component.html',
-  styleUrl: './gestion.component.css'
+  styleUrl: './gestion.component.css',
+  providers: [LoginService]
 }) 
 
 
@@ -59,9 +61,11 @@ export class GestionComponent{
         );
     }
 
+
+
+
     crearVista():void{
         this.router.navigate(['/gestion-crear']);
-        // this.estadoVista = 'crear';
     }
     
     editarVista(gestion: Gestion):void{
@@ -71,7 +75,7 @@ export class GestionComponent{
             }
         };
         this.router.navigate(['/gestion-editar'], navigationExtras);
-        // this.estadoVista = 'editar';
+
     }
     eliminarVista(gestion:Gestion):void{
         const navigationExtras: NavigationExtras = {
@@ -80,7 +84,11 @@ export class GestionComponent{
             }
         };
         this.router.navigate(['/gestion-eliminar'], navigationExtras);
-        // this.estadoVista = 'eliminar';
+
+    }
+    formatFecha(fecha: string): string {
+        const date = new Date(fecha);
+        return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
     }
     cancelar():void{
         this.estadoVista = 'general';
@@ -96,9 +104,6 @@ export class GestionComponent{
     
 
 
-    formatFecha(fecha: string): string {
-        const date = new Date(fecha);
-        return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
-      }
+    
 
 }
