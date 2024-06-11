@@ -49,7 +49,7 @@ credencialFallida:boolean=false;
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private loginService: LoginService
+    private LoginService: LoginService
   ) {}
 
   get usuario() {
@@ -59,7 +59,7 @@ credencialFallida:boolean=false;
   get password() {
     return this.loginForm.controls.password;
   }
-  
+
 
   focusPassword(passwordInput: HTMLInputElement) {
     passwordInput.focus();
@@ -67,9 +67,9 @@ credencialFallida:boolean=false;
 
   login() {
     if (this.loginForm.valid) {
-      
+
       this.LoginService.login(this.loginForm.value as LoginRequest).subscribe({
-        next: (userData => {
+        next: userData => {
           console.log(userData);
           window.location.href = '/inicio';
         },
@@ -93,7 +93,7 @@ credencialFallida:boolean=false;
       this.usuarioNuevo.usuario = this.loginForm.value.usuario;
       this.usuarioNuevo.password = this.loginForm.value.password;
     }
-      
+
     this.LoginService.loginApi(this.usuarioNuevo).subscribe(
       (response)=>{
         console.log(response);
@@ -110,7 +110,7 @@ credencialFallida:boolean=false;
       }
     );
 
-    
+
 
   }
 
