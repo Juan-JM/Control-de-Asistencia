@@ -24,6 +24,8 @@ import { GestionPeriodoComponent } from './pages/gestion-periodo/gestion-periodo
 import { CreateGestionPeriodoComponent } from './CRUD/GestionPeriodo/create-gestion-periodo/create-gestion-periodo.component';
 import { UpdateGestionPeriodoComponent } from './CRUD/GestionPeriodo/update-gestion-periodo/update-gestion-periodo.component';
 import { DeleteGestionPeriodoComponent } from './CRUD/GestionPeriodo/delete-gestion-periodo/delete-gestion-periodo.component';
+import { AuthGuard } from './guard/auth.guard';
+import { LoginService } from './services/auth/login.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { DeleteGestionPeriodoComponent } from './CRUD/GestionPeriodo/delete-gest
   ],
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    AuthGuard,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })

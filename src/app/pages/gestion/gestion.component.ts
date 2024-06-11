@@ -12,6 +12,7 @@ import {
 import { error } from "console";
 import { Router,NavigationExtras   } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { LoginService } from "../../services/auth/login.service";
 
 interface Gestion {
     id?: number;
@@ -23,7 +24,8 @@ interface Gestion {
 @Component({
     selector: 'app-gesion',
   templateUrl: './gestion.component.html',
-  styleUrl: './gestion.component.css'
+  styleUrl: './gestion.component.css',
+  providers: [LoginService]
 }) 
 
 
